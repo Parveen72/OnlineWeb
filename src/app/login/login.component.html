@@ -1,0 +1,30 @@
+<p>login works!</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center rounded shadow py-8 " style="height:450px ; background-color:beige ;">
+            <form #myForm="ngForm" (ngSubmit)="OnSubmit(myForm)">
+                <h2 >Sing in</h2>
+                 
+            
+            
+            <input class="in" type="text" placeholder="User Email"><br><br>
+            <input class="in" type="password" placeholder="Password"><br><br>
+            
+            <p>Forgot your password?</p>
+            <button>SING IN</button>
+         </form>
+        </div>
+        <div class="col-md-4 text-center rounded shadow py-8 " style="background-color:rgb(183, 238, 238);">
+            <form #myForm="ngForm" (ngSubmit)="OnSubmit(myForm)">
+                <div class="up">
+                <h2>Sing up</h2>
+                <p>Sing up here if you dont have account</p>
+                <button routerLink="/register">SING UP</button>
+                <router-outlet></router-outlet>
+                </div>
+              
+            </form>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<p>bank-details works!</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left rounded shadow py-5 ">
+            <h3 style="text-align:center;"><strong>BANK DETAILS</strong></h3>
+            <form [formGroup]="bankForm" (ngSubmit)="signup();">
+                <div class="formbox">
+                <div class="form-group">
+                <input type="text" formControlName="account_Holder_name" class="form-control" placeholder="Account Holder name" [ngClass]="{ 'is-invalid': submitted && fval['account_Holder_name'].errors }"/>
+                <div *ngIf="submitted && fval['account_Holder_name'].errors" class="invalid-feedback">
+                <div *ngIf="fval['account_Holder_name'].errors['required']">
+                Full Name is required and must be a valid name
+                </div>
+                </div>
+                </div>
+                <div class="form-group">
+                   <select class="form-control" formControlName="Bank" placeholder="Bank Name" [ngClass]="{ 'is-invalid': submitted && fval['Bank'].errors }">
+                    <option ng-option value="Default">Select</option>
+                        <option value="HDFC">HDFC</option>
+                        <option value="ICICI">ICICI</option>
+                        <option value="BOI">BOI</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" formControlName="Account_No" class="form-control" placeholder="Account No" [ngClass]="{ 'is-invalid': submitted && fval['Account_No'].errors }"/>
+                    <div *ngIf="submitted && fval['Account_No'].errors" class="invalid-feedback">
+                    <div *ngIf="fval['Account_No'].errors['required']">
+                    Bank Name is required and must be a valid name
+                    </div>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" formControlName="IFSC_Code" class="form-control" placeholder="IFSC Code" [ngClass]="{ 'is-invalid': submitted && fval['IFSC_Code'].errors }"/>
+                        <div *ngIf="submitted && fval['IFSC_Code'].errors" class="invalid-feedback">
+                        <div *ngIf="fval['IFSC_Code'].errors['required']">
+                        IFSC is required and must be a valid name
+                        </div>
+                        </div>
+                        </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary signin">Sign Up <span class="arrowbtn"><span
+                        class="fa fa-arrow-right"></span></span></button>
+                    </div>
+                    </div>
+            </form>     
+        </div>
+    </div>
+</div>
